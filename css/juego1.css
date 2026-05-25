@@ -1,0 +1,222 @@
+body{
+
+    margin:0;
+    padding:0;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:linear-gradient(
+    to bottom,
+    #87CEEB,
+    #ffffff);
+
+    text-align:center;
+
+    min-height:100vh;
+}
+
+.contenedor{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:20px;
+}
+
+h1{
+
+    color:#ff1493;
+
+    font-size:50px;
+}
+
+#indicacion{
+
+    font-size:35px;
+
+    color:#333;
+}
+
+.portada{
+
+    width:350px;
+
+    max-width:90%;
+
+    margin-bottom:20px;
+}
+
+button{
+
+    padding:15px 25px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#ff9800;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    margin:10px;
+}
+
+button:hover{
+
+    transform:scale(1.1);
+
+    background:#ff6600;
+}
+
+.zona-juego{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:50px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+}
+
+.colores{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.arrastrable{
+
+    width:140px;
+
+    height:140px;
+
+    object-fit:contain;
+
+    cursor:grab;
+
+    transition:0.3s;
+}
+
+.arrastrable:hover{
+
+    transform:scale(1.1);
+}
+
+.zona-soltar{
+
+    width:280px;
+
+    height:280px;
+
+    border:6px dashed #333;
+
+    border-radius:20px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
+
+    font-weight:bold;
+}
+
+.correcto{
+
+    background:#90ee90;
+
+    animation:brillar 1s infinite;
+}
+
+.incorrecto{
+
+    background:#ff7f7f;
+}
+
+@keyframes brillar{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+#mensaje{
+
+    font-size:40px;
+
+    margin-top:20px;
+
+    font-weight:bold;
+}
+
+.estrella{
+
+    width:70px;
+
+    animation:girar 2s linear infinite;
+}
+
+@keyframes girar{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.confeti{
+
+    position:fixed;
+
+    width:20px;
+
+    height:20px;
+
+    top:-20px;
+
+    animation:caer 4s linear forwards;
+}
+
+@keyframes caer{
+
+    to{
+
+        transform:
+        translateY(100vh)
+        rotate(720deg);
+    }
+}

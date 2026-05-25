@@ -1,0 +1,133 @@
+body{
+    margin:0;
+    font-family:Arial;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#74ebd5,#acb6e5);
+    overflow:hidden;
+}
+
+.fondo{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    width:500px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    animation:entrada 0.5s ease;
+}
+
+img{
+    width:200px;
+    height:200px;
+    object-fit:contain;
+    transition:0.3s;
+}
+
+.botones button{
+    margin:10px;
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,#ff2e7a,#ff9f1c);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.botones button:hover{
+    transform:scale(1.05);
+}
+
+#msg{
+    font-size:18px;
+    color:green;
+    margin-top:10px;
+}
+
+/* BARRA PROGRESO */
+.barra{
+    width:100%;
+    height:12px;
+    background:#ddd;
+    border-radius:10px;
+    margin-bottom:15px;
+    overflow:hidden;
+}
+
+#progreso{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#00c6ff,#0072ff);
+    transition:0.3s;
+}
+
+@keyframes entrada{
+    from{transform:scale(0.9);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+.final-screen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.final-card{
+    background:white;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    width:400px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+    animation:pop 0.6s ease;
+}
+
+.final-card h1{
+    font-size:40px;
+    color:#ff4d6d;
+}
+
+.final-card p{
+    font-size:18px;
+    color:#444;
+}
+
+.final-card button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,#ff2e7a,#ff9f1c);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.final-card button:hover{
+    transform:scale(1.05);
+}
+
+.emoji{
+    font-size:60px;
+}
+
+@keyframes pop{
+    from{transform:scale(0.5);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}

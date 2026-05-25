@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aprende Colores</title>
+    <link rel="icon" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/actividad.css">
+</head>
+
+<body>
+
+<div class="fondo"></div>
+
+<div class="card">
+
+    <h1>🎨 APRENDAMOS 🎨</h1>
+
+    <!-- PROGRESO -->
+    <div class="barra">
+        <div id="progreso"></div>
+    </div>
+
+    <!-- IMAGEN -->
+    <img id="img" src="../img/rojo.png" onclick="decirEspañol()">
+
+    <!-- TEXTO -->
+    <h2 id="es">ROJO</h2>
+    <h3 id="en">RED</h3>
+
+    <!-- BOTONES -->
+    <div class="botones">
+        <button onclick="escuchar()">🔊 Escuchar</button>
+        <button onclick="siguiente()">➡️ Siguiente</button>
+    </div>
+
+    <p id="msg"></p>
+
+</div>
+
+<!-- SONIDOS -->
+<audio id="click" src="../sonidos/click.mp3"></audio>
+<audio id="ok" src="../sonidos/correcto.mp3"></audio>
+<audio id="fin" src="../sonidos/fin.mp3"></audio>
+
+<script src="../js/actividad1.js"></script>
+
+</body>
+</html>

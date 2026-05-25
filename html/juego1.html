@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Aprende los Colores</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="../img/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+    href="../css/juego1.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>🎨 Aprende los Colores 🎨</h1>
+        
+        <h2 id="indicacion"></h2>
+
+        <button id="btnRepetir">
+
+            🔊 Repetir Color
+
+        </button>
+
+        <!-- ZONA DEL JUEGO -->
+
+        <div class="zona-juego">
+
+            <!-- COLORES -->
+
+            <div class="colores">
+
+                <img src="../img/rojo.png"
+                id="red"
+                draggable="true"
+                class="arrastrable">
+
+                <img src="../img/azul.png"
+                id="blue"
+                draggable="true"
+                class="arrastrable">
+
+                <img src="../img/verde.png"
+                id="green"
+                draggable="true"
+                class="arrastrable">
+
+                <img src="../img/amarillo.png"
+                id="yellow"
+                draggable="true"
+                class="arrastrable">
+
+                <img src="../img/morado.png"
+                id="purple"
+                draggable="true"
+                class="arrastrable">
+
+            </div>
+
+            <!-- ZONA PARA SOLTAR -->
+
+            <div class="zona-soltar"
+            id="zonaCorrecta">
+
+                SUELTA AQUÍ
+
+            </div>
+
+        </div>
+
+        <div id="mensaje"></div>
+
+        <div id="estrellas"></div>
+
+        <button id="btnReiniciar">
+
+            🔄 Reiniciar
+
+        </button>
+
+    </div>
+
+    <!-- AUDIOS -->
+
+    <audio id="audioCorrecto"
+    src="../sonido/correcto.mp3"></audio>
+
+    <audio id="audioIncorrecto"
+    src="../sonido/incorrecto.mp3"></audio>
+
+    <audio id="audioLogro"
+    src="../sonido/logro.mp3"></audio>
+
+    <!-- JS -->
+
+    <script src="../js/juego1.js"></script>
+
+</body>
+
+</html>
