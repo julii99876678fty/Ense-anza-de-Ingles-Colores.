@@ -8,12 +8,11 @@
     <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
 
-    <title>Aprende los Colores</title>
+    <title>Mundo de los Colores</title>
 
-    <!-- FAVICON -->
-    <link rel="icon" href="../img/favicon.png">
+    <link rel="icon"
+    href="../img/favicon.png">
 
-    <!-- CSS -->
     <link rel="stylesheet"
     href="../css/juego1.css">
 
@@ -23,71 +22,125 @@
 
     <div class="contenedor">
 
-        <h1>🎨 Aprende los Colores 🎨</h1>
-        
-        <h2 id="indicacion"></h2>
+        <!-- TITULO -->
 
-        <button id="btnRepetir">
+        <h1 class="titulo">
 
-            🔊 Repetir Color
+            🌈 Bienvenido al Mundo de los Colores 🌈
 
-        </button>
+        </h1>
 
-        <!-- ZONA DEL JUEGO -->
+        <!-- PANEL -->
 
-        <div class="zona-juego">
+        <div class="panel">
 
-            <!-- COLORES -->
+            <div class="caja correctas">
 
-            <div class="colores">
-
-                <img src="../img/rojo.png"
-                id="red"
-                draggable="true"
-                class="arrastrable">
-
-                <img src="../img/azul.png"
-                id="blue"
-                draggable="true"
-                class="arrastrable">
-
-                <img src="../img/verde.png"
-                id="green"
-                draggable="true"
-                class="arrastrable">
-
-                <img src="../img/amarillo.png"
-                id="yellow"
-                draggable="true"
-                class="arrastrable">
-
-                <img src="../img/morado.png"
-                id="purple"
-                draggable="true"
-                class="arrastrable">
+                ✅ Buenas:
+                <span id="correctas">0</span>
 
             </div>
 
-            <!-- ZONA PARA SOLTAR -->
+            <div class="caja errores">
 
-            <div class="zona-soltar"
-            id="zonaCorrecta">
+                ❌ Malas:
+                <span id="errores">0</span>
 
-                SUELTA AQUÍ
+            </div>
+
+            <div class="caja puntaje">
+
+                ⭐ Puntaje:
+                <span id="puntaje">0</span>
 
             </div>
 
         </div>
 
+        <!-- BOTONES -->
+
+        <div class="botones">
+
+            <button id="btnInstrucciones">
+
+                🎮 ¿Cómo jugar?
+
+            </button>
+
+            <button id="btnColor">
+
+                🔊 Escuchar Color
+
+            </button>
+
+        </div>
+
+        <!-- JUEGO -->
+
+        <div class="zonaJuego">
+
+            <!-- GLOBO -->
+
+            <div class="globoZona">
+
+                <img id="imagenColor"
+                src="../img/rojo.png">
+
+            </div>
+
+            <!-- PALABRAS -->
+
+            <div class="palabras">
+
+                <div draggable="true"
+                class="palabra"
+                id="red">
+
+                    RED
+
+                </div>
+
+                <div draggable="true"
+                class="palabra"
+                id="blue">
+
+                    BLUE
+
+                </div>
+
+                <div draggable="true"
+                class="palabra"
+                id="green">
+
+                    GREEN
+
+                </div>
+
+                <div draggable="true"
+                class="palabra"
+                id="yellow">
+
+                    YELLOW
+
+                </div>
+
+                <div draggable="true"
+                class="palabra"
+                id="purple">
+
+                    PURPLE
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MENSAJE -->
+
         <div id="mensaje"></div>
 
-        <div id="estrellas"></div>
-
-        <button id="btnReiniciar">
-
-            🔄 Reiniciar
-
-        </button>
+        <div id="efectos"></div>
 
     </div>
 
@@ -101,8 +154,6 @@
 
     <audio id="audioLogro"
     src="../sonido/logro.mp3"></audio>
-
-    <!-- JS -->
 
     <script src="../js/juego1.js"></script>
 

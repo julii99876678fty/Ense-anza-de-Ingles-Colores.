@@ -2,30 +2,43 @@ const colores = [
 
     {
         id:"red",
-        nombre:"ROJO - RED"
+        ingles:"RED",
+        imagen:"../img/rojo.png"
     },
 
     {
         id:"blue",
-        nombre:"AZUL - BLUE"
+        ingles:"BLUE",
+        imagen:"../img/azul.png"
     },
 
     {
         id:"green",
-        nombre:"VERDE - GREEN"
+        ingles:"GREEN",
+        imagen:"../img/verde.png"
     },
 
     {
         id:"yellow",
-        nombre:"AMARILLO - YELLOW"
+        ingles:"YELLOW",
+        imagen:"../img/amarillo.png"
     },
 
     {
         id:"purple",
-        nombre:"MORADO - PURPLE"
+        ingles:"PURPLE",
+        imagen:"../img/morado.png"
     }
 
 ];
+
+/* LISTAS */
+
+let pendientes = [...colores];
+
+let incorrectos = [];
+
+/* VARIABLES */
 
 let colorActual;
 
@@ -33,14 +46,24 @@ let correctas = 0;
 
 let errores = 0;
 
-const indicacion =
-document.getElementById("indicacion");
+let puntaje = 0;
 
-const zonaCorrecta =
-document.getElementById("zonaCorrecta");
+/* ELEMENTOS */
+
+const imagen =
+document.getElementById("imagenColor");
 
 const mensaje =
 document.getElementById("mensaje");
+
+const textoCorrectas =
+document.getElementById("correctas");
+
+const textoErrores =
+document.getElementById("errores");
+
+const textoPuntaje =
+document.getElementById("puntaje");
 
 const audioCorrecto =
 document.getElementById("audioCorrecto");
@@ -51,237 +74,338 @@ document.getElementById("audioIncorrecto");
 const audioLogro =
 document.getElementById("audioLogro");
 
-function iniciarJuego(){
+/* VOZ */
 
-    const aleatorio =
-    Math.floor(Math.random() * colores.length);
+function hablar(texto, idioma="en-US"){
 
-    colorActual = colores[aleatorio];
-
-    indicacion.innerHTML =
-    `Arrastra el color:<br>${colorActual.nombre}`;
-
-    hablar(colorActual.nombre);
-
-    mensaje.innerHTML = "";
-
-    zonaCorrecta.classList.remove("correcto");
-
-    zonaCorrecta.classList.remove("incorrecto");
-}
-
-iniciarJuego();
-
-function hablar(texto){
+    speechSynthesis.cancel();
 
     const voz =
     new SpeechSynthesisUtterance(texto);
 
-    voz.lang = "es-ES";
+    voz.lang = idioma;
+
+    voz.rate = 0.8;
 
     speechSynthesis.speak(voz);
 }
 
+/* INTRO */
+
+window.onload = ()=>{
+
+    const intro =
+    "Bienvenido al mundo de los colores. Escucha el color en inglés y arrastra la palabra correcta hacia el globo correcto. Si te equivocas, el color volverá a aparecer después.";
+
+    hablar(intro,"es-ES");
+
+    iniciarJuego();
+
+};
+
+/* INICIAR */
+
+function iniciarJuego(){
+
+    if(pendientes.length === 0){
+
+        /* SI HAY ERRORES */
+
+        if(incorrectos.length > 0){
+
+            pendientes = [...incorrectos];
+
+            incorrectos = [];
+
+            mensaje.innerHTML =
+            "🔁 REPASEMOS LOS COLORES INCORRECTOS 🔁";
+
+            mensaje.style.color =
+            "yellow";
+
+            hablar(
+            "Ahora repasaremos los colores incorrectos",
+            "es-ES"
+            );
+
+            setTimeout(()=>{
+
+                siguienteColor();
+
+            },2500);
+
+            return;
+        }
+
+        /* SI TERMINO TODO */
+
+        mensaje.innerHTML =
+        "🏆 ¡FELICITACIONES! COMPLETASTE TODOS LOS COLORES 🏆";
+
+        mensaje.style.color =
+        "#00ff6a";
+
+        audioLogro.play();
+
+        hablar(
+        "Congratulations. You completed all the colors.",
+        "en-US"
+        );
+
+        crearEstrellasFinales();
+
+        return;
+    }
+
+    siguienteColor();
+}
+
+/* SIGUIENTE */
+
+function siguienteColor(){
+
+    colorActual = pendientes[0];
+
+    imagen.src =
+    colorActual.imagen;
+
+}
+
+/* BOTON INSTRUCCIONES */
+
 document
-.getElementById("btnRepetir")
+.getElementById("btnInstrucciones")
 .addEventListener("click", ()=>{
 
-    hablar(colorActual.nombre);
+    hablar(
+    "Escucha el color en inglés y arrastra la palabra correcta hacia el globo.",
+    "es-ES"
+    );
 
 });
 
-const elementos =
-document.querySelectorAll(".arrastrable");
+/* BOTON COLOR */
 
-elementos.forEach(elemento=>{
+document
+.getElementById("btnColor")
+.addEventListener("click", ()=>{
 
-    elemento.addEventListener("dragstart",(e)=>{
+    hablar(
+    colorActual.ingles,
+    "en-US"
+    );
+
+});
+
+/* DRAG */
+
+const palabras =
+document.querySelectorAll(".palabra");
+
+palabras.forEach(palabra=>{
+
+    palabra.addEventListener(
+    "dragstart",
+    (e)=>{
 
         e.dataTransfer.setData(
-            "text",
-            elemento.id
+        "text",
+        palabra.id
         );
 
     });
 
 });
 
-zonaCorrecta.addEventListener(
-    "dragover",
-    (e)=>{
+/* DROP */
 
-        e.preventDefault();
+const globo =
+document.getElementById("imagenColor");
 
-    }
-);
+globo.addEventListener(
+"dragover",
+(e)=>{
 
-zonaCorrecta.addEventListener(
-    "drop",
-    (e)=>{
+    e.preventDefault();
 
-        e.preventDefault();
+});
 
-        const dato =
-        e.dataTransfer.getData("text");
+globo.addEventListener(
+"drop",
+(e)=>{
 
-        validarRespuesta(dato);
+    e.preventDefault();
 
-    }
-);
+    const dato =
+    e.dataTransfer.getData("text");
 
-function validarRespuesta(id){
+    validar(dato);
+
+});
+
+/* VALIDAR */
+
+function validar(id){
 
     if(id === colorActual.id){
 
-        audioCorrecto.play();
+        correctas++;
 
-        zonaCorrecta.classList.add("correcto");
+        puntaje += 10;
 
         mensaje.innerHTML =
         "🎉 ¡CORRECTO! 🎉";
 
+        mensaje.style.color =
+        "#00ff6a";
+
+        audioCorrecto.play();
+
+        hablar(
+        "Muy bien",
+        );
+
         crearEstrellas();
 
-        correctas++;
+        pendientes.shift();
 
-        if(correctas >= 5){
-
-            audioLogro.play();
-
-            mensaje.innerHTML =
-            "🏆 ¡FELICITACIONES! 🏆";
-
-            crearConfetiFinal();
-        }
+        actualizar();
 
         setTimeout(()=>{
 
             iniciarJuego();
 
-        },2000);
+        },1500);
 
     }else{
 
         errores++;
 
-        audioIncorrecto.play();
+        puntaje -= 5;
 
-        zonaCorrecta.classList.add("incorrecto");
+        if(puntaje < 0){
+
+            puntaje = 0;
+        }
 
         mensaje.innerHTML =
-        "❌ Inténtalo nuevamente ❌";
+        "❌ INCORRECTO ❌";
+
+        mensaje.style.color =
+        "#ff1744";
+
+        audioIncorrecto.play();
+
+
+        /* GUARDAR INCORRECTO */
+
+        if(
+        !incorrectos.includes(colorActual)
+        ){
+
+            incorrectos.push(colorActual);
+        }
+
+        pendientes.shift();
+
+        actualizar();
 
         setTimeout(()=>{
 
-            zonaCorrecta.classList.remove(
-            "incorrecto");
-
-        },1000);
-
-        if(errores >= 5){
-
-            alert(
-            "Debes comenzar nuevamente 😄"
-            );
-
-            errores = 0;
-
-            correctas = 0;
-
             iniciarJuego();
-        }
+
+        },1500);
 
     }
 
 }
 
-document
-.getElementById("btnReiniciar")
-.addEventListener("click", ()=>{
+/* PANEL */
 
-    errores = 0;
+function actualizar(){
 
-    correctas = 0;
+    textoCorrectas.innerHTML =
+    correctas;
 
-    iniciarJuego();
+    textoErrores.innerHTML =
+    errores;
 
-});
+    textoPuntaje.innerHTML =
+    puntaje;
+
+}
+
+/* ESTRELLAS */
 
 function crearEstrellas(){
 
-    const contenedor =
-    document.getElementById("estrellas");
+    for(let i=0; i<20; i++){
 
-    const estrella =
-    document.createElement("img");
-
-    estrella.src =
-    "../img/estrella.png";
-
-    estrella.classList.add("estrella");
-
-    contenedor.appendChild(estrella);
-
-    setTimeout(()=>{
-
-        estrella.remove();
-
-    },3000);
-
-    crearConfeti();
-}
-
-function crearConfeti(){
-
-    for(let i=0; i<30; i++){
-
-        const confeti =
+        const estrella =
         document.createElement("div");
 
-        confeti.classList.add("confeti");
+        estrella.classList.add(
+        "estrella"
+        );
 
-        confeti.style.left =
-        Math.random() * window.innerWidth + "px";
+        estrella.innerHTML =
+        "⭐";
 
-        confeti.style.backgroundColor =
-        `hsl(${Math.random()*360},
-        100%,50%)`;
+        estrella.style.left =
+        Math.random() *
+        window.innerWidth + "px";
 
-        document.body.appendChild(confeti);
+        estrella.style.top =
+        Math.random() *
+        window.innerHeight + "px";
+
+        document.body.appendChild(
+        estrella
+        );
 
         setTimeout(()=>{
 
-            confeti.remove();
+            estrella.remove();
 
-        },4000);
+        },3000);
 
     }
 
 }
 
-function crearConfetiFinal(){
+/* FINAL */
+
+function crearEstrellasFinales(){
 
     for(let i=0; i<80; i++){
 
-        const confeti =
+        const estrella =
         document.createElement("div");
 
-        confeti.classList.add("confeti");
+        estrella.classList.add(
+        "estrella"
+        );
 
-        confeti.style.left =
-        Math.random() * window.innerWidth + "px";
+        estrella.innerHTML =
+        "🌟";
 
-        confeti.style.backgroundColor =
-        `hsl(${Math.random()*360},
-        100%,50%)`;
+        estrella.style.left =
+        Math.random() *
+        window.innerWidth + "px";
 
-        document.body.appendChild(confeti);
+        estrella.style.top =
+        Math.random() *
+        window.innerHeight + "px";
+
+        document.body.appendChild(
+        estrella
+        );
 
         setTimeout(()=>{
 
-            confeti.remove();
+            estrella.remove();
 
-        },5000);
+        },4000);
 
     }
 
