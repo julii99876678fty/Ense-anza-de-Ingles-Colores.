@@ -362,3 +362,62 @@ button:active{
         opacity:0;
     }
 }
+#btnAvanzar{
+
+    display:none;
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    padding:25px 45px;
+
+    font-size:35px;
+
+    font-weight:bold;
+
+    border:none;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    180deg,
+    #00e676,
+    #00c853);
+
+    box-shadow:
+    0 10px 0 #009624,
+    0 15px 25px rgba(0,0,0,0.5);
+
+    animation:botonFinal 1s infinite;
+}
+
+#btnAvanzar:hover{
+
+    transform:scale(1.1);
+}
+
+@keyframes botonFinal{
+
+    0%{
+
+        transform:scale(1);
+    }
+
+    50%{
+
+        transform:scale(1.08);
+    }
+
+    100%{
+
+        transform:scale(1);
+    }
+}

@@ -74,6 +74,9 @@ document.getElementById("audioIncorrecto");
 const audioLogro =
 document.getElementById("audioLogro");
 
+const btnAvanzar =
+document.getElementById("btnAvanzar");
+
 /* VOZ */
 
 function hablar(texto, idioma="en-US"){
@@ -148,11 +151,16 @@ function iniciarJuego(){
         audioLogro.play();
 
         hablar(
-        "Congratulations. You completed all the colors.",
-        "en-US"
+        "Felicitaciones completaste el juego",
+        "es-ES"
         );
 
         crearEstrellasFinales();
+
+        /* MOSTRAR BOTON */
+
+        btnAvanzar.style.display =
+        "block";
 
         return;
     }
@@ -160,7 +168,7 @@ function iniciarJuego(){
     siguienteColor();
 }
 
-/* SIGUIENTE */
+/* SIGUIENTE COLOR */
 
 function siguienteColor(){
 
@@ -262,7 +270,8 @@ function validar(id){
         audioCorrecto.play();
 
         hablar(
-        "Muy bien",
+        "muy bien",
+        "en-ES"
         );
 
         crearEstrellas();
@@ -296,6 +305,10 @@ function validar(id){
 
         audioIncorrecto.play();
 
+        hablar(
+        "incorrecto",
+        "en-ES"
+        );
 
         /* GUARDAR INCORRECTO */
 
@@ -320,7 +333,7 @@ function validar(id){
 
 }
 
-/* PANEL */
+/* ACTUALIZAR PANEL */
 
 function actualizar(){
 
@@ -335,7 +348,7 @@ function actualizar(){
 
 }
 
-/* ESTRELLAS */
+/* ESTRELLAS NORMALES */
 
 function crearEstrellas(){
 
@@ -373,7 +386,7 @@ function crearEstrellas(){
 
 }
 
-/* FINAL */
+/* ESTRELLAS FINALES */
 
 function crearEstrellasFinales(){
 
@@ -410,3 +423,16 @@ function crearEstrellasFinales(){
     }
 
 }
+
+/* BOTON AVANZAR */
+
+btnAvanzar.addEventListener(
+"click",
+()=>{
+
+    window.open(
+    "felicitaciones.html",
+    "_blank"
+    );
+
+});

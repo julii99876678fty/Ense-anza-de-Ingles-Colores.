@@ -1,0 +1,220 @@
+body{
+
+    margin:0;
+    padding:0;
+
+    overflow:hidden;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:
+    linear-gradient(
+    270deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    purple,
+    red);
+
+    background-size:1600% 1600%;
+
+    animation:fondo 15s ease infinite;
+
+    text-align:center;
+}
+
+@keyframes fondo{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.contenedor{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    position:relative;
+
+    z-index:10;
+}
+
+h1{
+
+    font-size:90px;
+
+    color:white;
+
+    text-shadow:
+    6px 6px 15px black;
+
+    animation:titulo 2s infinite;
+}
+
+@keyframes titulo{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+.avatar{
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:12px solid white;
+
+    box-shadow:
+    0 0 40px white;
+
+    background:white;
+}
+
+.nombre{
+
+    margin-top:25px;
+
+    font-size:55px;
+
+    color:white;
+
+    font-weight:bold;
+
+    text-shadow:
+    5px 5px 10px black;
+}
+
+.puntaje{
+
+    margin-top:30px;
+
+    font-size:70px;
+
+    color:yellow;
+
+    font-weight:bold;
+
+    text-shadow:
+    5px 5px 10px black;
+
+    animation:puntaje 1s infinite;
+}
+
+@keyframes puntaje{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+.mensaje{
+
+    margin-top:30px;
+
+    width:80%;
+
+    max-width:900px;
+
+    font-size:40px;
+
+    color:white;
+
+    font-weight:bold;
+
+    text-shadow:
+    4px 4px 10px black;
+}
+
+.estrella{
+
+    position:fixed;
+
+    font-size:80px;
+
+    animation:estrella 4s linear forwards;
+}
+
+@keyframes estrella{
+
+    from{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:
+        translateY(-400px)
+        rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+.confeti{
+
+    position:fixed;
+
+    width:20px;
+
+    height:20px;
+
+    top:-20px;
+
+    animation:caer 5s linear forwards;
+}
+
+@keyframes caer{
+
+    to{
+
+        transform:
+        translateY(120vh)
+        rotate(720deg);
+    }
+}
