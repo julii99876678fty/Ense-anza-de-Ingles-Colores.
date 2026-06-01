@@ -138,3 +138,30 @@ body{
         transform:scale(1);
     }
 }
+.link-basico{
+
+    display:block;
+
+    margin-top:10px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#0d47a1;
+
+    letter-spacing:1px;
+
+    transition:all 0.3s ease;
+}
+
+.link-basico:hover{
+
+    color:#ff6f00;
+
+    text-shadow:0 0 10px rgba(255,111,0,0.4);
+}

@@ -1,0 +1,127 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #001f8f,
+        #0044ff,
+        #00b7ff
+    );
+}
+
+.contenedor{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+}
+
+.tarjeta{
+
+    background:white;
+
+    width:700px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:0 0 30px rgba(0,0,0,0.3);
+}
+
+h1{
+
+    color:#0d47a1;
+
+    margin-bottom:20px;
+}
+
+.avatar{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    border:6px solid #ff9800;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+}
+
+#nombreUsuario{
+
+    color:#ff6600;
+
+    margin-bottom:25px;
+}
+
+.objetivo{
+
+    background:#eaf4ff;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+}
+
+.objetivo h3{
+
+    margin-bottom:10px;
+
+    color:#0d47a1;
+}
+
+.objetivo p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    line-height:1.5;
+}
+
+button{
+
+    background:#ff9800;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 30px;
+
+    font-size:22px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+}

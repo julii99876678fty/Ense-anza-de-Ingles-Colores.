@@ -1,0 +1,451 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Comic Sans MS', Arial, sans-serif;
+}
+
+body{
+
+    background:
+    linear-gradient(
+        135deg,
+        #0044ff,
+        #0088ff,
+        #00cfff
+    );
+
+    min-height:100vh;
+
+    padding:20px;
+
+    text-align:center;
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+
+@keyframes flotar{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Título */
+
+h1{
+
+    color:white;
+
+    font-size:50px;
+
+    text-shadow:3px 3px 0px #ff9800;
+
+    margin-bottom:10px;
+}
+
+.instruccion{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+}
+
+#mensaje{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:white;
+
+    height:45px;
+
+    margin-bottom:15px;
+}
+
+/* Tarjeta principal */
+
+.contenedor{
+
+    background:white;
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,0.4);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:60px;
+
+    flex-wrap:wrap;
+
+    position:relative;
+
+    z-index:10;
+}
+/* Trofeo */
+
+.contenedor::before{
+
+    content:"🏆";
+
+    position:absolute;
+
+    top:-40px;
+
+    font-size:70px;
+}
+
+/* Pacman */
+
+.contenedor::after{
+
+    content:"🟡";
+
+    position:absolute;
+
+    bottom:-25px;
+    right:20px;
+
+    font-size:60px;
+
+    animation:moverPacman 2s infinite alternate;
+}
+
+@keyframes moverPacman{
+
+    from{
+        transform:translateX(0px);
+    }
+
+    to{
+        transform:translateX(-30px);
+    }
+}
+
+/* Caja números */
+
+.numeros{
+
+    background:#e3f2fd;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    width:420px;
+
+    min-height:280px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    justify-content:center;
+
+    align-content:center;
+}
+
+.numero{
+
+    background:
+    linear-gradient(
+        45deg,
+        #ffd54f,
+        #ff9800
+    );
+
+    color:#222;
+
+    width:90px;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    border-radius:15px;
+
+    cursor:grab;
+
+    transition:0.3s;
+}
+
+.numero:hover{
+
+    transform:scale(1.1);
+}
+
+/* Caja de orden */
+
+.orden{
+
+    background:#f5f5f5;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    width:360px;
+}
+
+.zona{
+
+    height:60px;
+
+    border:3px dashed #777;
+
+    border-radius:15px;
+
+    margin-bottom:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    font-weight:bold;
+}
+
+.correcta{
+
+    background:#81c784 !important;
+
+    border:none;
+}
+
+/* Botón */
+
+button{
+
+    margin-top:25px;
+
+    padding:15px 35px;
+
+    font-size:24px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        45deg,
+        #ff9800,
+        #ff5722
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+}
+
+#siguiente{
+
+    display:none;
+}
+
+/* Estrellas flotantes */
+
+.estrella{
+
+    position:fixed;
+
+    font-size:30px;
+
+    animation:caer 5s linear infinite;
+}
+
+@keyframes caer{
+
+    from{
+        transform:translateY(-50px);
+    }
+
+    to{
+        transform:translateY(110vh);
+    }
+} 
+/* Números decorativos */
+
+.num-flotante{
+
+    position:fixed;
+
+    font-size:90px;
+
+    font-weight:bold;
+
+    opacity:0.35;
+
+    z-index:0;
+
+    animation:flotar 4s infinite ease-in-out;
+
+    user-select:none;
+}
+
+/* Colores llamativos */
+
+.n1{
+    top:5%;
+    left:3%;
+    color:#ffeb3b;
+}
+
+.n2{
+    top:15%;
+    right:5%;
+    color:#ff5722;
+}
+
+.n3{
+    top:40%;
+    left:2%;
+    color:#00ff88;
+}
+
+.n4{
+    top:65%;
+    left:8%;
+    color:#ff00aa;
+}
+
+.n5{
+    bottom:5%;
+    left:15%;
+    color:#ffd600;
+}
+
+.n6{
+    top:20%;
+    left:25%;
+    color:#00e5ff;
+}
+
+.n7{
+    top:10%;
+    right:25%;
+    color:#ff9100;
+}
+
+.n8{
+    bottom:20%;
+    right:8%;
+    color:#76ff03;
+}
+
+.n9{
+    top:55%;
+    right:3%;
+    color:#ff1744;
+}
+
+.n10{
+    bottom:8%;
+    right:25%;
+    color:#ffff00;
+}
+
+/* Estrellas gigantes */
+
+.grande{
+
+    position:fixed;
+
+    font-size:80px;
+
+    z-index:0;
+
+    animation:brillar 3s infinite;
+}
+
+.estrella1{
+    top:10px;
+    left:20%;
+}
+
+.estrella2{
+    top:10px;
+    left:50%;
+}
+
+.estrella3{
+    top:10px;
+    left:80%;
+}
+
+@keyframes flotar{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes brillar{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
