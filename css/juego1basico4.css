@@ -398,7 +398,7 @@ button:hover{
 
     position:fixed;
 
-    font-size:80px;
+    font-size:50px;
 
     z-index:0;
 
@@ -407,17 +407,17 @@ button:hover{
 
 .estrella1{
     top:10px;
-    left:20%;
+    left:30%;
 }
 
 .estrella2{
     top:10px;
-    left:50%;
+    left:30%;
 }
 
 .estrella3{
     top:10px;
-    left:80%;
+    left:30%;
 }
 
 @keyframes flotar{
@@ -447,5 +447,27 @@ button:hover{
 
     100%{
         transform:scale(1);
+    }
+}
+@keyframes shake{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-5px);
+    }
+
+    50%{
+        transform:translateX(5px);
+    }
+
+    75%{
+        transform:translateX(-5px);
+    }
+
+    100%{
+        transform:translateX(0);
     }
 }

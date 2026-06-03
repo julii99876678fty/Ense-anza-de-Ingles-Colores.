@@ -2,10 +2,19 @@ let arrastrado = null;
 
 let completados = 0;
 
-const numeros = document.querySelectorAll(".numero");
-const zonas = document.querySelectorAll(".zona");
+const contenedorNumeros =
+document.getElementById("contenedorNumeros");
+
+const zonas =
+document.querySelectorAll(".zona");
+
+let numerosJuego = [];
+
+/* Voz inicial */
 
 window.onload = function(){
+
+    generarJuego();
 
     let voz = new SpeechSynthesisUtterance(
         "Ordena los números desde el más pequeño hasta el más grande."
@@ -16,18 +25,80 @@ window.onload = function(){
     speechSynthesis.speak(voz);
 };
 
-numeros.forEach(numero=>{
+/* Generar números */
 
-    numero.addEventListener("dragstart",()=>{
+function generarJuego(){
 
-        arrastrado = numero;
+    completados = 0;
 
-        let click = new Audio("../SONIDO/click.mp3");
+    numerosJuego = [];
 
-        click.play();
+    contenedorNumeros.innerHTML = "";
+
+    document.getElementById("mensaje").innerHTML = "";
+
+    document.getElementById("siguiente").style.display =
+    "none";
+
+    while(numerosJuego.length < 10){
+
+        let numero =
+        Math.floor(Math.random()*10000)+1;
+
+        if(!numerosJuego.includes(numero)){
+
+            numerosJuego.push(numero);
+        }
+    }
+
+    let ordenados =
+    [...numerosJuego].sort((a,b)=>a-b);
+
+    zonas.forEach((zona,index)=>{
+
+        zona.innerHTML =
+        `${index+1}° Lugar`;
+
+        zona.dataset.correcto =
+        ordenados[index];
+
+        zona.classList.remove("correcta");
     });
 
-});
+    let mezclados =
+    [...numerosJuego].sort(
+        ()=>Math.random()-0.5
+    );
+
+    mezclados.forEach(numero=>{
+
+        let div =
+        document.createElement("div");
+
+        div.classList.add("numero");
+
+        div.draggable = true;
+
+        div.id = numero;
+
+        div.textContent = numero;
+
+        div.addEventListener("dragstart",()=>{
+
+            arrastrado = div;
+
+            let click =
+            new Audio("../SONIDO/click.mp3");
+
+            click.play();
+        });
+
+        contenedorNumeros.appendChild(div);
+    });
+
+}
+
+/* Drag & Drop */
 
 zonas.forEach(zona=>{
 
@@ -39,9 +110,13 @@ zonas.forEach(zona=>{
 
     zona.addEventListener("drop",()=>{
 
-        if(zona.classList.contains("correcta")) return;
+        if(zona.classList.contains("correcta")){
 
-        let valorCorrecto = zona.dataset.correcto;
+            return;
+        }
+
+        let valorCorrecto =
+        zona.dataset.correcto;
 
         if(arrastrado.id === valorCorrecto){
 
@@ -77,11 +152,38 @@ zonas.forEach(zona=>{
 
             document.getElementById("mensaje").innerHTML =
             "❌ Ese número no va aquí";
+
+            arrastrado.style.animation =
+            "shake 0.3s";
+
+            setTimeout(()=>{
+
+                arrastrado.style.animation =
+                "";
+
+            },300);
         }
 
     });
 
 });
+
+/* Reiniciar con nuevos números */
+
+function reiniciarJuego(){
+
+    generarJuego();
+
+    let voz = new SpeechSynthesisUtterance(
+        "Se generaron nuevos números."
+    );
+
+    voz.lang = "es-ES";
+
+    speechSynthesis.speak(voz);
+}
+
+/* Finalizar */
 
 function finalizarJuego(){
 
@@ -91,8 +193,15 @@ function finalizarJuego(){
     document.getElementById("siguiente").style.display =
     "inline-block";
 
+    let correcto =
+    new Audio("../SONIDO/correcto.mp3");
+
+    correcto.play();
+
     confeti();
 }
+
+/* Confeti */
 
 function confeti(){
 
@@ -133,6 +242,8 @@ function confeti(){
         },20);
     }
 }
+
+/* Juego 2 */
 
 function siguienteJuego(){
 

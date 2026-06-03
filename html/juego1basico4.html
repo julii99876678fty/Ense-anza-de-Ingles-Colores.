@@ -1,18 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
-
 <title>Juego 1 - Ordena los números</title>
-
+<link rel="icon" href="../IMG/favicon.png">
 <link rel="stylesheet" href="../CSS/juego1basico4.css">
-
 </head>
-
 <body>
-    <div class="num-flotante n1">1</div>
+
+<!-- Números decorativos -->
+
+<div class="num-flotante n1">1</div>
 <div class="num-flotante n2">2</div>
 <div class="num-flotante n3">3</div>
 <div class="num-flotante n4">4</div>
@@ -23,60 +23,61 @@
 <div class="num-flotante n9">9</div>
 <div class="num-flotante n10">10</div>
 
+<!-- Estrellas -->
+
 <div class="estrella grande estrella1">⭐</div>
 <div class="estrella grande estrella2">⭐</div>
 <div class="estrella grande estrella3">⭐</div>
-    <div class="decoracion">⭐</div>
-<div class="decoracion">⭐</div>
-<div class="decoracion">⭐</div>
 
 <h1>🎮 Ordena de Menor a Mayor</h1>
 
 <p class="instruccion">
-Arrastra los números al lugar correcto.
+    Arrastra los números al lugar correcto.
 </p>
 
 <div id="mensaje"></div>
 
 <div class="contenedor">
 
-    <div class="numeros">
+    <!-- Números generados por JavaScript -->
 
-        <div class="numero" draggable="true" id="22">22</div>
-        <div class="numero" draggable="true" id="15">15</div>
-        <div class="numero" draggable="true" id="96">96</div>
-        <div class="numero" draggable="true" id="47">47</div>
-        <div class="numero" draggable="true" id="70">70</div>
-        <div class="numero" draggable="true" id="53">53</div>
-        <div class="numero" draggable="true" id="1">1</div>
-        <div class="numero" draggable="true" id="82">82</div>
-        <div class="numero" draggable="true" id="39">39</div>
-        <div class="numero" draggable="true" id="66">66</div>
+    <div class="numeros" id="contenedorNumeros">
 
     </div>
 
+    <!-- Zonas de orden -->
+
     <div class="orden">
 
-        <div class="zona" data-correcto="1">1° Lugar</div>
-        <div class="zona" data-correcto="15">2° Lugar</div>
-        <div class="zona" data-correcto="22">3° Lugar</div>
-        <div class="zona" data-correcto="39">4° Lugar</div>
-        <div class="zona" data-correcto="47">5° Lugar</div>
-        <div class="zona" data-correcto="53">6° Lugar</div>
-        <div class="zona" data-correcto="66">7° Lugar</div>
-        <div class="zona" data-correcto="70">8° Lugar</div>
-        <div class="zona" data-correcto="82">9° Lugar</div>
-        <div class="zona" data-correcto="96">10° Lugar</div>
+        <div class="zona" data-correcto="">1° Lugar</div>
+        <div class="zona" data-correcto="">2° Lugar</div>
+        <div class="zona" data-correcto="">3° Lugar</div>
+        <div class="zona" data-correcto="">4° Lugar</div>
+        <div class="zona" data-correcto="">5° Lugar</div>
+        <div class="zona" data-correcto="">6° Lugar</div>
+        <div class="zona" data-correcto="">7° Lugar</div>
+        <div class="zona" data-correcto="">8° Lugar</div>
+        <div class="zona" data-correcto="">9° Lugar</div>
+        <div class="zona" data-correcto="">10° Lugar</div>
 
     </div>
 
 </div>
 
-<button id="siguiente" onclick="siguienteJuego()">
-🚀 Ir al Juego 2
-</button>
+<div class="botones">
+
+    <button id="reiniciar" onclick="reiniciarJuego()">
+        🔄 Nuevos números
+    </button>
+
+    <button id="siguiente" onclick="siguienteJuego()">
+        🚀 Ir al Juego 2
+    </button>
+
+</div>
 
 <script src="../JS/juego1basico4.js"></script>
 
 </body>
+
 </html>
