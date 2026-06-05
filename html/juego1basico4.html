@@ -1,82 +1,111 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<title>Juego 1 - Ordena los números</title>
-<link rel="icon" href="../IMG/favicon.png">
-<link rel="stylesheet" href="../CSS/juego1basico4.css">
+
+    <meta charset="UTF-8">
+
+    <title>Juego 1 - Ordena los números</title>
+
+    <link rel="icon" href="../IMG/favicon.png">
+
+    <link rel="stylesheet" href="../CSS/juego1basico4.css">
+
 </head>
+
 <body>
 
-<!-- Números decorativos -->
+    <!-- Números flotantes -->
 
-<div class="num-flotante n1">1</div>
-<div class="num-flotante n2">2</div>
-<div class="num-flotante n3">3</div>
-<div class="num-flotante n4">4</div>
-<div class="num-flotante n5">5</div>
-<div class="num-flotante n6">6</div>
-<div class="num-flotante n7">7</div>
-<div class="num-flotante n8">8</div>
-<div class="num-flotante n9">9</div>
-<div class="num-flotante n10">10</div>
+    <div class="num-flotante n1">1</div>
+    <div class="num-flotante n2">2</div>
+    <div class="num-flotante n3">3</div>
+    <div class="num-flotante n4">4</div>
+    <div class="num-flotante n5">5</div>
+    <div class="num-flotante n6">6</div>
+    <div class="num-flotante n7">7</div>
+    <div class="num-flotante n8">8</div>
+    <div class="num-flotante n9">9</div>
+    <div class="num-flotante n10">10</div>
 
-<!-- Estrellas -->
+    <!-- Estrellas -->
 
-<div class="estrella grande estrella1">⭐</div>
-<div class="estrella grande estrella2">⭐</div>
-<div class="estrella grande estrella3">⭐</div>
+    <div class="estrella grande estrella1">⭐</div>
+    <div class="estrella grande estrella2">⭐</div>
+    <div class="estrella grande estrella3">⭐</div>
 
-<h1>🎮 Ordena de Menor a Mayor</h1>
+    <h1>🎮 Ordena de Menor a Mayor</h1>
 
-<p class="instruccion">
-    Arrastra los números al lugar correcto.
-</p>
+    <p class="instruccion">
+        Arrastra los números desde el más pequeño hasta el más grande.
+    </p>
 
-<div id="mensaje"></div>
+    <div id="mensaje"></div>
 
-<div class="contenedor">
+    <!-- PUNTAJE -->
 
-    <!-- Números generados por JavaScript -->
+    <div class="puntaje">
 
-    <div class="numeros" id="contenedorNumeros">
+        ⭐ Buenas:
+        <span id="buenas">0</span>
 
-    </div>
+        |
 
-    <!-- Zonas de orden -->
-
-    <div class="orden">
-
-        <div class="zona" data-correcto="">1° Lugar</div>
-        <div class="zona" data-correcto="">2° Lugar</div>
-        <div class="zona" data-correcto="">3° Lugar</div>
-        <div class="zona" data-correcto="">4° Lugar</div>
-        <div class="zona" data-correcto="">5° Lugar</div>
-        <div class="zona" data-correcto="">6° Lugar</div>
-        <div class="zona" data-correcto="">7° Lugar</div>
-        <div class="zona" data-correcto="">8° Lugar</div>
-        <div class="zona" data-correcto="">9° Lugar</div>
-        <div class="zona" data-correcto="">10° Lugar</div>
+        ❌ Malas:
+        <span id="malas">0</span>
 
     </div>
 
-</div>
+    <div class="contenedor">
 
-<div class="botones">
+        <!-- NUMEROS -->
 
-    <button id="reiniciar" onclick="reiniciarJuego()">
-        🔄 Nuevos números
-    </button>
+        <div
+            class="numeros"
+            id="contenedorNumeros">
 
-    <button id="siguiente" onclick="siguienteJuego()">
-        🚀 Ir al Juego 2
-    </button>
+        </div>
 
-</div>
+        <!-- ZONAS -->
 
-<script src="../JS/juego1basico4.js"></script>
+        <div class="orden">
+
+            <div class="zona">1° Lugar</div>
+            <div class="zona">2° Lugar</div>
+            <div class="zona">3° Lugar</div>
+            <div class="zona">4° Lugar</div>
+            <div class="zona">5° Lugar</div>
+            <div class="zona">6° Lugar</div>
+            <div class="zona">7° Lugar</div>
+            <div class="zona">8° Lugar</div>
+            <div class="zona">9° Lugar</div>
+            <div class="zona">10° Lugar</div>
+
+        </div>
+
+    </div>
+
+    <div class="botones">
+
+        <button
+            id="reiniciar"
+            onclick="reiniciarJuego()">
+
+            🔄 Nuevos números
+
+        </button>
+
+        <button
+            id="siguiente"
+            onclick="siguienteJuego()">
+
+            🚀 Ir al Juego 2
+
+        </button>
+
+    </div>
+
+    <script src="../JS/juego1basico4.js"></script>
 
 </body>
 
