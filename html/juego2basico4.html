@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Juego 2 - Supermercado</title>
+
+    <link rel="icon" href="../IMG/favicon.png">
+
+    <link rel="stylesheet" href="../CSS/juego2basico4.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>🛒 Cajero del Supermercado</h1>
+
+        <div class="info-jugador">
+
+            <img
+            id="avatar"
+            class="avatar">
+
+            <div>
+
+                <h2 id="nombre"></h2>
+
+                <p>
+                    ⭐ Buenas:
+                    <span id="buenas">0</span>
+                </p>
+
+                <p>
+                    ❌ Malas:
+                    <span id="malas">0</span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <p class="instruccion">
+            Arrastra cada producto a su lugar correcto.
+        </p>
+
+        <div id="mensaje"></div>
+
+        <div class="productos">
+
+            <div class="producto"
+            draggable="true"
+            id="pan">
+
+                <img src="../img/pan.jpg">
+
+                <h3>🍞 Pan</h3>
+
+                <p>$850</p>
+
+            </div>
+
+        <div class="productos">
+
+    <div class="producto" draggable="true" id="pan">
+
+        <img src="../IMG/pan.png">
+
+        <h3>🍞 Pan</h3>
+
+        <p>$850</p>
+
+    </div>
+
+    <div class="producto" draggable="true" id="leche">
+
+        <img src="../IMG/leche.png">
+
+        <h3>🥛 Leche</h3>
+
+        <p>$1250</p>
+
+    </div>
+
+    <div class="producto" draggable="true" id="jugo">
+
+        <img src="../IMG/jugo.png">
+
+        <h3>🧃 Jugo</h3>
+
+        <p>$1800</p>
+
+    </div>
+
+    <div class="producto" draggable="true" id="queso">
+
+        <img src="../IMG/queso.png">
+
+        <h3>🧀 Queso</h3>
+
+        <p>$2400</p>
+
+    </div>
+
+    <div class="producto" draggable="true" id="galletas">
+
+        <img src="../IMG/galletas.png">
+
+        <h3>🍪 Galletas</h3>
+
+        <p>$2900</p>
+
+    </div>
+
+    <div class="producto" draggable="true" id="cereal">
+
+        <img src="../IMG/cereal.png">
+
+        <h3>🥣 Cereal</h3>
+
+        <p>$3400</p>
+
+    </div>
+
+</div>
+
+    <div class="zonas">
+
+    <div class="zona" data-correcto="pan">
+        1° Más barato
+    </div>
+
+    <div class="zona" data-correcto="leche">
+        2°
+    </div>
+
+    <div class="zona" data-correcto="jugo">
+        3°
+    </div>
+
+    <div class="zona" data-correcto="queso">
+        4°
+    </div>
+
+    <div class="zona" data-correcto="galletas">
+        5°
+    </div>
+
+    <div class="zona" data-correcto="cereal">
+        6° Más caro
+    </div>
+
+</div>
+
+            <div class="zona"
+            data-correcto="cereal">
+
+                💎 Más Caro
+
+            </div>
+
+        </div>
+
+        <button
+        id="siguiente"
+        onclick="siguienteJuego()">
+
+            🚀 Continuar
+
+        </button>
+
+    </div>
+
+    <script src="../JS/juego2basico4.js"></script>
+
+</body>
+
+</html>

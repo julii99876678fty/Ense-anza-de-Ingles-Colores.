@@ -455,5 +455,5 @@ function siguienteJuego(){
     );
 
     window.location.href =
-    "juego2basico4.html";
+    "felicitaciones1.html";
 }
