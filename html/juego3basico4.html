@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Juego 3 - Paradero de Buses</title>
+
+<link rel="icon" href="../IMG/favicon.png">
+
+<link rel="stylesheet" href="../CSS/juego3basico4.css">
+
+</head>
+
+<body>
+    <div class="busDecorativo bus1">🚌</div>
+
+<div class="busDecorativo bus2">🚍</div>
+
+<div class="carretera"></div>
+
+<h1>🚌 Paradero de Buses</h1>
+
+<div class="panel-jugador">
+
+    <img id="avatar" class="avatar">
+
+    <div>
+        <h2 id="nombre"></h2>
+
+        <p>⭐ Buenas Totales:
+            <span id="buenas"></span>
+        </p>
+
+        <p>❌ Malas Juego 3:
+            <span id="malas"></span>
+        </p>
+    </div>
+
+</div>
+
+<p class="instruccion">
+Ordena los buses desde el número más pequeño hasta el más grande.
+</p>
+
+<div id="mensaje"></div>
+
+<div class="buses" id="contenedorBuses">
+
+    <div class="bus" draggable="true" id="420">
+        🚌 420
+    </div>
+
+    <div class="bus" draggable="true" id="75">
+        🚌 75
+    </div>
+
+    <div class="bus" draggable="true" id="1200">
+        🚌 1200
+    </div>
+
+    <div class="bus" draggable="true" id="980">
+        🚌 980
+    </div>
+
+    <div class="bus" draggable="true" id="35">
+        🚌 35
+    </div>
+
+    <div class="bus" draggable="true" id="2500">
+        🚌 2500
+    </div>
+
+</div>
+
+<div class="paraderos">
+
+    <div class="zona" data-correcto="35">
+        1° Bus
+    </div>
+
+    <div class="zona" data-correcto="75">
+        2°
+    </div>
+
+    <div class="zona" data-correcto="420">
+        3°
+    </div>
+
+    <div class="zona" data-correcto="980">
+        4°
+    </div>
+
+    <div class="zona" data-correcto="1200">
+        5°
+    </div>
+
+    <div class="zona" data-correcto="2500">
+        6°
+    </div>
+
+</div>
+
+<button id="siguiente" onclick="siguienteJuego()">
+🚀 Continuar
+</button>
+
+<script src="../JS/juego3basico4.js"></script>
+
+</body>
+</html>

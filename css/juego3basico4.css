@@ -1,0 +1,364 @@
+body{
+
+    margin:0;
+
+    font-family:'Comic Sans MS',sans-serif;
+
+    min-height:100vh;
+
+    text-align:center;
+
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(
+    180deg,
+    #4fc3f7,
+    #81d4fa,
+    #b3e5fc
+    );
+
+}
+
+/* Sol */
+
+body::before{
+
+    content:"☀️";
+
+    position:fixed;
+
+    top:20px;
+
+    right:30px;
+
+    font-size:90px;
+
+    animation:girar 15s linear infinite;
+
+}
+
+/* Nubes */
+
+body::after{
+
+    content:"☁️ ☁️ ☁️";
+
+    position:fixed;
+
+    top:60px;
+
+    left:-300px;
+
+    font-size:80px;
+
+    animation:nubes 25s linear infinite;
+
+}
+
+/* Carretera */
+
+.carretera{
+
+    position:fixed;
+
+    bottom:0;
+
+    width:100%;
+
+    height:130px;
+
+    background:#424242;
+
+    z-index:-1;
+
+}
+
+.carretera::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:55px;
+
+    width:100%;
+
+    height:10px;
+
+    background:
+    repeating-linear-gradient(
+    to right,
+    white 0px,
+    white 50px,
+    transparent 50px,
+    transparent 100px
+    );
+
+}
+
+/* Buses decorativos */
+
+.busDecorativo{
+
+    position:fixed;
+
+    font-size:90px;
+
+    animation:moverBus 18s linear infinite;
+
+}
+
+.bus1{
+
+    bottom:25px;
+
+    left:-200px;
+
+}
+
+.bus2{
+
+    bottom:120px;
+
+    right:-200px;
+
+    animation-duration:25s;
+
+    animation-direction:reverse;
+
+}
+
+h1{
+
+    color:#ff9800;
+
+    font-size:55px;
+
+    text-shadow:3px 3px white;
+
+}
+
+.panel-jugador{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    background:white;
+
+    width:550px;
+
+    margin:auto;
+
+    border-radius:25px;
+
+    padding:20px;
+
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+
+}
+
+.avatar{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    border:6px solid gold;
+
+}
+
+.instruccion{
+
+    color:#0d47a1;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+.buses{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    background:white;
+
+    width:92%;
+
+    margin:30px auto;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    border:6px solid #ff9800;
+
+    box-shadow:0 0 30px rgba(0,0,0,.2);
+
+}
+
+.bus{
+
+    background:#ffeb3b;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    font-size:32px;
+
+    cursor:grab;
+
+    transition:.3s;
+
+}
+
+.bus:hover{
+
+    transform:scale(1.15);
+
+}
+
+.paraderos{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    width:95%;
+
+    margin:auto;
+
+}
+
+.zona{
+
+    width:170px;
+
+    height:100px;
+
+    background:white;
+
+    border:4px dashed #2196f3;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
+
+.correcta{
+
+    background:#c8e6c9;
+
+}
+
+#mensaje{
+
+    font-size:35px;
+
+    font-weight:bold;
+
+    color:#e65100;
+
+    min-height:50px;
+
+}
+
+#siguiente{
+
+    display:none;
+
+    margin:30px;
+
+    padding:18px 50px;
+
+    font-size:25px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#4caf50;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+/* Animaciones */
+
+@keyframes moverBus{
+
+    from{
+
+        transform:translateX(-300px);
+
+    }
+
+    to{
+
+        transform:translateX(1800px);
+
+    }
+
+}
+
+@keyframes nubes{
+
+    from{
+
+        left:-400px;
+
+    }
+
+    to{
+
+        left:110%;
+
+    }
+
+}
+
+@keyframes girar{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}

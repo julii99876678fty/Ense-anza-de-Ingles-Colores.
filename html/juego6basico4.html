@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Juego 6 - Escape Matemático del Futuro</title>
+
+<link rel="icon" href="../IMG/favicon.png">
+
+<link rel="stylesheet" href="../CSS/juego6basico4.css">
+
+</head>
+
+<body>
+
+<div class="estrella e1">⭐</div>
+<div class="estrella e2">✨</div>
+<div class="estrella e3">⭐</div>
+<div class="estrella e4">✨</div>
+<div class="estrella e5">⭐</div>
+
+<div class="contenedor">
+
+    <div class="perfil">
+
+        <img
+        id="avatar"
+        class="avatar">
+
+        <div>
+
+            <h2 id="nombre"></h2>
+
+            <div class="puntaje">
+
+                ⭐ Buenas:
+                <span id="buenas"></span>
+
+                |
+
+                ❌ Malas:
+                <span id="malas"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <h1>
+        🚀 Escape Matemático del Futuro
+    </h1>
+
+    <h2 id="puerta">
+
+        Puerta 1 de 5
+
+    </h2>
+
+    <div id="mision"
+    class="mision">
+
+    </div>
+
+    <input
+    type="number"
+    id="respuesta"
+    placeholder="Escribe tu respuesta">
+
+    <br>
+
+    <button onclick="verificar()">
+
+        🔓 Abrir Puerta
+
+    </button>
+
+    <div id="mensaje"></div>
+
+    <button
+    id="siguiente"
+    onclick="siguienteJuego()">
+
+    🚀 Finalizar
+
+    </button>
+
+</div>
+
+<script src="../JS/juego6basico4.js"></script>
+
+</body>
+
+</html>

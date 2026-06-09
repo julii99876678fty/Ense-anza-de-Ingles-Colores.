@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Juego 5 - Banco del Futuro</title>
+
+<link rel="icon" href="../IMG/favicon.png">
+
+<link rel="stylesheet" href="../CSS/juego5basico4.css">
+
+</head>
+
+<body>
+
+<!-- Monedas flotantes -->
+
+<div class="moneda m1">💰</div>
+<div class="moneda m2">💰</div>
+<div class="moneda m3">🪙</div>
+<div class="moneda m4">💵</div>
+<div class="moneda m5">🪙</div>
+<div class="moneda m6">💰</div>
+
+<div class="contenedor">
+
+    <div class="perfil">
+
+        <img
+        id="avatar"
+        class="avatar">
+
+        <div>
+
+            <h2 id="nombre"></h2>
+
+            <div class="puntaje">
+
+                ⭐ Buenas:
+                <span id="buenas">0</span>
+
+                |
+
+                ❌ Malas:
+                <span id="malas">0</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <h1>
+        🏦 Banco del Futuro 2050
+    </h1>
+
+    <div class="ronda">
+
+        Misión
+        <span id="rondaActual">
+        1
+        </span>
+        de 5
+
+    </div>
+
+    <div class="problema">
+
+        <p id="saldo"></p>
+
+        <p id="deposito"></p>
+
+        <p id="retiro"></p>
+
+        <h2>
+            ¿Cuánto dinero tiene ahora?
+        </h2>
+
+    </div>
+
+    <div
+    id="opciones"
+    class="opciones">
+
+    </div>
+
+    <div id="mensaje"></div>
+
+    <button
+    id="siguiente"
+    onclick="siguienteJuego()">
+
+    🚀 Continuar
+
+    </button>
+
+</div>
+
+<script src="../JS/juego5basico4.js"></script>
+
+</body>
+
+</html>

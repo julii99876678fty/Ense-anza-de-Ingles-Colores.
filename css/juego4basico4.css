@@ -1,0 +1,199 @@
+body{
+
+    margin:0;
+
+    font-family:Arial,sans-serif;
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    135deg,
+    #1565c0,
+    #1e88e5,
+    #42a5f5
+    );
+
+    overflow:hidden;
+
+}
+
+.numero-fondo{
+
+    position:absolute;
+
+    font-size:60px;
+
+    font-weight:bold;
+
+    color:rgba(255,255,255,.15);
+
+    animation:flotar 8s infinite alternate;
+
+}
+
+.n1{top:5%;left:5%;}
+.n2{top:10%;right:10%;}
+.n3{top:40%;left:2%;}
+.n4{top:60%;right:5%;}
+.n5{bottom:10%;left:15%;}
+.n6{bottom:5%;right:15%;}
+
+@keyframes flotar{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-20px);
+
+    }
+
+}
+
+.contenedor{
+
+    width:900px;
+
+    margin:20px auto;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:30px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:10;
+
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+
+}
+
+.avatar{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    border:6px solid gold;
+
+}
+
+#nombre{
+
+    color:#1976d2;
+
+}
+
+h1{
+
+    color:#ff9800;
+
+}
+
+.puntaje{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin:20px;
+
+}
+
+.pistas{
+
+    background:#e3f2fd;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+}
+
+.pistas p{
+
+    font-size:24px;
+
+    margin:10px;
+
+}
+
+.opciones{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.opcion{
+
+    background:#fff176;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    font-size:35px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.opcion:hover{
+
+    transform:scale(1.05);
+
+}
+
+#mensaje{
+
+    font-size:30px;
+
+    margin-top:20px;
+
+    font-weight:bold;
+
+}
+
+#siguiente{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px 40px;
+
+    font-size:24px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#4caf50;
+
+    color:white;
+
+    cursor:pointer;
+
+}

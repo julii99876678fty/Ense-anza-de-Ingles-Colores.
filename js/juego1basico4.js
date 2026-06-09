@@ -222,14 +222,28 @@ function reiniciarNumerosIncorrectos(){
 
     let zonasPendientes = [];
 
+    let numeroBase = 0;
+
     zonas.forEach(zona=>{
 
-        if(!zona.classList.contains("correcta")){
+        if(zona.classList.contains("correcta")){
+
+            let valor =
+            parseInt(zona.dataset.correcto);
+
+            if(valor > numeroBase){
+
+                numeroBase = valor;
+
+            }
+
+        }else{
 
             zona.innerHTML =
             zona.dataset.posicion;
 
             zonasPendientes.push(zona);
+
         }
 
     });
@@ -241,14 +255,30 @@ function reiniciarNumerosIncorrectos(){
         zonasPendientes.length
     ){
 
-        let numero =
-        Math.floor(Math.random()*10000)+1;
+        let numero;
+
+        if(numeroBase >= 9990){
+
+            numero =
+            Math.floor(Math.random()*10000)+1;
+
+        }else{
+
+            numero =
+            Math.floor(
+            Math.random() *
+            (10000 - numeroBase)
+            ) +
+            numeroBase + 1;
+
+        }
 
         if(
             !nuevosNumeros.includes(numero)
         ){
 
             nuevosNumeros.push(numero);
+
         }
 
     }

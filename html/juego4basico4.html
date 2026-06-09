@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Juego 4 - Detective de Números</title>
+
+<link rel="icon" href="../IMG/favicon.png">
+
+<link rel="stylesheet" href="../CSS/juego4basico4.css">
+
+</head>
+
+<body>
+
+<div class="numero-fondo n1">1234</div>
+<div class="numero-fondo n2">5678</div>
+<div class="numero-fondo n3">9876</div>
+<div class="numero-fondo n4">3456</div>
+<div class="numero-fondo n5">7890</div>
+<div class="numero-fondo n6">4567</div>
+
+<div class="contenedor">
+
+    <img
+    id="avatar"
+    class="avatar">
+
+    <h2 id="nombre"></h2>
+
+    <h1>
+        🕵️ Detective de Números
+    </h1>
+
+    <div class="puntaje">
+
+        ⭐ Buenas:
+        <span id="buenas">0</span>
+
+        |
+
+        ❌ Malas:
+        <span id="malas">0</span>
+
+    </div>
+
+    <div class="pistas">
+
+        <h2>🔍 Pistas</h2>
+
+        <p id="pista1"></p>
+        <p id="pista2"></p>
+        <p id="pista3"></p>
+        <p id="pista4"></p>
+
+    </div>
+
+    <div id="opciones" class="opciones">
+
+    </div>
+
+    <div id="mensaje"></div>
+
+    <button
+    id="siguiente"
+    onclick="siguienteJuego()">
+
+    🚀 Continuar
+
+    </button>
+
+</div>
+
+<script src="../JS/juego4basico4.js"></script>
+
+</body>
+
+</html>

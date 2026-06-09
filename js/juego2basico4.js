@@ -142,9 +142,9 @@ function finalizarJuego(){
     );
 
     localStorage.setItem(
-    "malas",
-    malas
-    );
+"malasJuego2",
+malas
+);
 
     document.getElementById("mensaje")
     .innerHTML =

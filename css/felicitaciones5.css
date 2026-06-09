@@ -1,0 +1,118 @@
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    font-family:Arial,sans-serif;
+
+    background:
+    linear-gradient(
+    135deg,
+    #001f4d,
+    #003b8e,
+    #0055cc,
+    #00aaff
+    );
+
+}
+
+.contenedor{
+
+    width:750px;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 0 40px gold;
+
+    z-index:10;
+
+}
+
+h1{
+
+    color:#ff9800;
+
+    font-size:50px;
+
+}
+
+.avatar{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:8px solid gold;
+
+}
+
+#nombreJugador{
+
+    color:#1565c0;
+
+    font-size:38px;
+
+}
+
+.puntaje{
+
+    width:450px;
+
+    margin:30px auto;
+
+    background:#e3f2fd;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+button{
+
+    background:#4caf50;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 40px;
+
+    border-radius:20px;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
