@@ -359,6 +359,7 @@ function finalizarJuego(){
 function confeti(){
 
     const colores = [
+
         "#ff0000",
         "#00ff00",
         "#0000ff",
@@ -366,21 +367,32 @@ function confeti(){
         "#ff00ff",
         "#00ffff",
         "#ff8800",
-        "#ff1493"
+        "#ff1493",
+        "#ffd700",
+        "#ffffff"
+
     ];
 
-    for(let i=0;i<150;i++){
+    for(let i = 0; i < 350; i++){
 
         let papel =
         document.createElement("div");
 
-        papel.style.position = "fixed";
+        papel.style.position =
+        "fixed";
 
-        papel.style.width = "12px";
+        let tamaño =
 
-        papel.style.height = "12px";
+        Math.random() * 18 + 8;
+
+        papel.style.width =
+        tamaño + "px";
+
+        papel.style.height =
+        tamaño + "px";
 
         papel.style.background =
+
         colores[
             Math.floor(
                 Math.random() *
@@ -389,60 +401,102 @@ function confeti(){
         ];
 
         papel.style.borderRadius =
+
         Math.random() > 0.5
         ? "50%"
-        : "0";
+        : "3px";
 
-        papel.style.zIndex = "9999";
+        papel.style.zIndex =
+        "9999";
 
-        /* Sale desde ambos lados */
+        papel.style.pointerEvents =
+        "none";
 
-        if(Math.random() > 0.5){
+        let ladoIzquierdo =
 
-            papel.style.left = "-20px";
+        Math.random() > 0.5;
 
-        }else{
+        if(ladoIzquierdo){
 
             papel.style.left =
-            window.innerWidth + "px";
+            "-40px";
+
+        }
+
+        else{
+
+            papel.style.left =
+            (window.innerWidth + 40)
+            + "px";
 
         }
 
         papel.style.top =
-        Math.random() * 100 + "px";
+        (window.innerHeight - 120)
+        + "px";
 
         document.body.appendChild(
             papel
         );
 
         let x =
-        parseInt(papel.style.left);
+        parseFloat(
+            papel.style.left
+        );
 
         let y =
-        parseInt(papel.style.top);
+        parseFloat(
+            papel.style.top
+        );
 
         let velocidadX =
-        (Math.random()*8)+3;
 
-        if(x > 0){
+        ladoIzquierdo
 
-            velocidadX =
-            -velocidadX;
-        }
+        ?
+
+        (Math.random()*8)+8
+
+        :
+
+        -((Math.random()*8)+8);
 
         let velocidadY =
-        (Math.random()*4)+2;
 
-        let rotacion = 0;
+        -(Math.random()*15+18);
 
-        let anim =
+        let gravedad =
+        0.28;
+
+        let rotacion =
+        Math.random()*360;
+
+        let velocidadRotacion =
+
+        (Math.random()*18)+8;
+
+        let curva =
+
+        (Math.random()*2)-1;
+
+        let animacion =
+
         setInterval(()=>{
 
-            x += velocidadX;
+            velocidadY +=
+            gravedad;
 
-            y += velocidadY;
+            velocidadX +=
+            curva * 0.03;
 
-            rotacion += 15;
+            x +=
+            velocidadX;
+
+            y +=
+            velocidadY;
+
+            rotacion +=
+            velocidadRotacion;
 
             papel.style.left =
             x + "px";
@@ -451,20 +505,23 @@ function confeti(){
             y + "px";
 
             papel.style.transform =
+
             `rotate(${rotacion}deg)`;
 
             if(
                 y >
-                window.innerHeight + 50
+                window.innerHeight + 200
             ){
 
-                clearInterval(anim);
+                clearInterval(
+                animacion
+                );
 
                 papel.remove();
 
             }
 
-        },20);
+        },16);
 
     }
 

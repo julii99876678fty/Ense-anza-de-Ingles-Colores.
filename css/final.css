@@ -22,8 +22,6 @@ body{
 
     font-family:Arial,sans-serif;
 
-    overflow-x:hidden;
-
 }
 
 .contenedor{
@@ -43,19 +41,36 @@ body{
 
 }
 
+.estrellas{
+
+    font-size:100px;
+
+    animation:brillar 2s infinite;
+}
+
 h1{
 
     color:#ff9800;
 
-    font-size:70px;
+    font-size:85px;
 
+    margin:10px;
+}
+
+.subtitulo{
+
+    color:#1565c0;
+
+    font-size:35px;
+
+    margin-bottom:30px;
 }
 
 .avatarGrande{
 
-    width:320px;
+    width:350px;
 
-    height:320px;
+    height:350px;
 
     border-radius:50%;
 
@@ -64,68 +79,62 @@ h1{
     border:15px solid gold;
 
     box-shadow:
-    0 0 50px gold;
-
+    0 0 60px gold;
 }
 
 #nombreJugador{
 
-    font-size:55px;
+    font-size:60px;
 
     color:#1565c0;
 
+    margin-top:20px;
 }
 
 .medalla{
 
-    font-size:80px;
+    font-size:70px;
 
-    margin:20px;
+    font-weight:bold;
+
+    margin-top:25px;
+
+    color:#ff9800;
+}
+
+.mensajeFinal{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    color:#4caf50;
+
+    margin-top:30px;
 }
 
 .estadisticas{
+
+    margin-top:40px;
 
     font-size:35px;
 
     font-weight:bold;
 
-    margin-top:30px;
-
     color:#333;
-
 }
 
-.diploma{
+.logroFinal{
 
     margin-top:40px;
 
-    padding:30px;
+    font-size:32px;
 
-    border:8px solid gold;
+    color:#673ab7;
 
-    border-radius:30px;
+    font-weight:bold;
 
-    background:
-    linear-gradient(
-    135deg,
-    #fff8dc,
-    #fff4b3
-    );
-
-}
-
-.diploma h2{
-
-    font-size:45px;
-
-    color:#e65100;
-
-}
-
-.diploma p{
-
-    font-size:30px;
-
+    padding:25px;
 }
 
 button{
@@ -151,5 +160,70 @@ button{
 button:hover{
 
     transform:scale(1.05);
+}
+
+@keyframes brillar{
+
+    0%{
+
+        transform:scale(1);
+    }
+
+    50%{
+
+        transform:scale(1.15);
+    }
+
+    100%{
+
+        transform:scale(1);
+    }
+
+}
+.botonesFinal{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.btnInicio{
+
+    padding:22px 60px;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #4caf50,
+    #2e7d32
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 25px rgba(76,175,80,0.8);
+
+    transition:0.3s;
+}
+
+.btnInicio:hover{
+
+    transform:
+    scale(1.08);
+
+    box-shadow:
+    0 0 40px rgba(76,175,80,1);
 
 }

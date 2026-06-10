@@ -31,11 +31,6 @@ window.onload = function(){
     nombre;
 
     document.getElementById(
-    "nombreDiploma"
-    ).textContent =
-    nombre;
-
-    document.getElementById(
     "buenas"
     ).textContent =
     buenas;
@@ -45,9 +40,7 @@ window.onload = function(){
     ).textContent =
     malas;
 
-    let porcentaje =
-
-    Math.round(
+    let porcentaje = Math.round(
     (buenas /
     (buenas + malas))
     *100
@@ -56,7 +49,6 @@ window.onload = function(){
     if(isNaN(porcentaje)){
 
         porcentaje = 100;
-
     }
 
     document.getElementById(
@@ -72,9 +64,6 @@ window.onload = function(){
     nombre,
     porcentaje
     );
-
-    fuegosArtificiales();
-
 };
 
 function asignarMedalla(
@@ -128,11 +117,11 @@ porcentaje
     let voz =
     new SpeechSynthesisUtterance(
 
-    "Hola " +
+    "Felicitaciones " +
 
-    "Quiero felicitarte por completar toda la aventura matemática. " +
+    nombre +
 
-    "Has trabajado con números, dinero, lógica y resolución de problemas. " +
+    ". Has completado toda la aventura matemática. " +
 
     "Tu porcentaje final fue de " +
 
@@ -142,7 +131,7 @@ porcentaje
 
     "Estoy muy orgulloso de tu esfuerzo. " +
 
-    "Hoy te gradúas como un gran explorador matemático."
+    "Hoy eres un campeón de las matemáticas."
 
     );
 
@@ -160,12 +149,13 @@ porcentaje
 
 }
 
+function volverInicio(){
 
-function reiniciarAventura(){
+    speechSynthesis.cancel();
 
     localStorage.clear();
 
     window.location.href =
-    "../index.html";
+    "bienvenida.html";
 
 }
