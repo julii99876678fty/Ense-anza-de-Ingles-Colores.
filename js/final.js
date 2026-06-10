@@ -159,3 +159,9 @@ function volverInicio(){
     "bienvenida.html";
 
 }
+function irATodos(){
+
+    window.location.href =
+    "todos.html";
+
+}

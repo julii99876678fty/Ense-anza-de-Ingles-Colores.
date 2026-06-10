@@ -227,3 +227,66 @@ button:hover{
     0 0 40px rgba(76,175,80,1);
 
 }
+.botonesFinal{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btnInicio,
+.btnTodos{
+
+    padding:22px 60px;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    border:none;
+
+    border-radius:20px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.btnInicio{
+
+    background:
+    linear-gradient(
+    135deg,
+    #4caf50,
+    #2e7d32
+    );
+
+}
+
+.btnTodos{
+
+    background:
+    linear-gradient(
+    135deg,
+    #2196f3,
+    #1565c0
+    );
+
+}
+
+.btnInicio:hover,
+.btnTodos:hover{
+
+    transform:scale(1.08);
+
+}
